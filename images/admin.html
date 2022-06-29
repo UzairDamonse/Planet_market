@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark">
+    <section>
+      <div>
+        <!-- Button trigger modal -->
+        <div
+          class="d-flex justify-content-between align-items-baseline border-bottom"
+        >
+          <h5 class="m-2 text-light">Welcome admin</h5>
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <div class="d-flex align-items-baseline">
+              <i class="fa-solid fa-plus"></i>
+              Add
+            </div>
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                  Modal title
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Understood
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="table-responsive h-100">
+        <table class="table table-dark table-striped align-middle">
+          <thead class="align-middle">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Image</th>
+              <th scope="col">Location</th>
+              <th scope="col">Surface Area</th>
+              <th scope="col">Temperature</th>
+              <th scope="col">Orbit Time</th>
+              <th scope="col">Resources Available</th>
+              <th scope="col">Price</th>
+              <th scope="col">Edit / Delete</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="tableRow"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/65fc09b8ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>

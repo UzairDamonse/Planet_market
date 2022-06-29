@@ -64,12 +64,22 @@ a:hover {
   color: #fafcfa;
   height: 70vh;
   font-family: "Orbitron", sans-serif;
-  background-image: url(https://i.postimg.cc/CBnrgjYT/Landing-Background.jpg);
+  background-image: url(https://i.postimg.cc/hjpkVr5j/Landing-Background.jpg);
   background-size: cover;
 }
 
 #companyName {
   text-shadow: 3px 2px 4px rgba(227, 186, 159, 0.8);
+}
+
+/* Admin styles */
+
+#edit:hover {
+  cursor: pointer;
+}
+
+#delete:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {

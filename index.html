@@ -15,7 +15,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <!-- NavBar -->
@@ -38,13 +38,106 @@
       id="landingContainer"
       class="d-flex justify-content-center align-items-center"
     >
-      <div id="landing">
+      <div id="landing" class="text-center">
         <h1>
           Welcome to
           <span class="text-uppercase" id="companyName"
             >wandering star requisitions</span
           >
         </h1>
+      </div>
+    </section>
+    <section id="filter" class="my-4 border py-4">
+      <div id="filterBy" class="d-flex justify-content-center">
+        <h3>You can filter how you see the planets</h3>
+      </div>
+      <div id="filter-container" class="m-2 d-flex justify-content-center row">
+        <!--Surface Area -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Filter by Surface Area</p>
+          <select
+            name="surfaceArea"
+            id="surfaceArea"
+            style="width: 80%"
+            onchange="filterSurfaceArea(event)"
+          >
+            <option value="all">All</option>
+            <option value="10^8">10^8 km²</option>
+            <option value="10^9">10^9 km²</option>
+            <option value="10^10">10^10 km²</option>
+          </select>
+        </div>
+        <!-- Temperatue -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Filter by Temperatue</p>
+          <select
+            name="temperatue"
+            id="temperatue"
+            style="width: 80%"
+            onchange="filterTemperature(event)"
+          >
+            <option value="all">All</option>
+            <option value="temperatureAcsending">Temperatue Ascending</option>
+            <option value="temperatureDescsending">
+              Temperatue Descending
+            </option>
+          </select>
+        </div>
+        <!-- Orbit Time -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Filter by Orbit Time</p>
+          <select
+            name="orbitTime"
+            id="orbitTime"
+            style="width: 81%"
+            onchange="filterOrbitTime(event)"
+          >
+            <option value="all">All</option>
+            <option value="orbitTimeAscending">Orbit Time Ascending</option>
+            <option value="orbitTimeDescending">Orbit Time Descending</option>
+          </select>
+        </div>
+        <!-- Resources Available -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Filter by Resources Available</p>
+          <select
+            name="resourcesAvailable"
+            id="resourcesAvailable"
+            style="width: 80%"
+            onchange="filterResourcesAvailable(event)"
+          >
+            <option value="all">All</option>
+            <option value="rare">Rare elements</option>
+            <option value="light">Light metals</option>
+            <option value="heavy">Heavy metals</option>
+            <option value="water">Water</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <!-- Price -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Filter by Price</p>
+          <select
+            name="price"
+            id="price"
+            onchange="filterPrice(event)"
+            style="width: 80%"
+          >
+            <option value="all">All</option>
+            <option value="priceAcsending">Price Ascending</option>
+            <option value="priceDescsending">Price Descending</option>
+          </select>
+        </div>
+        <!-- Location -->
+        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+          <p>Search by Location</p>
+          <input
+            type="text"
+            oninput="filterLocation(event)"
+            placeholder="eg. Voyager"
+            style="width: 81%"
+          />
+        </div>
       </div>
     </section>
     <section id="cards" class="row d-flex justify-content-around"></section>
@@ -61,6 +154,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script src="./index.js"></script>
+    <script src="./scripts.js"></script>
   </body>
 </html>
