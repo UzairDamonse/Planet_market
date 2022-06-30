@@ -1,0 +1,26 @@
+#close {
+  top: 20px;
+  left: 100px;
+}
+#Modal {
+  position: fixed;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: none;
+  z-index: -11;
+}
+
+#Modal.active {
+  height: 35%;
+  width: 40%;
+  display: block;
+  z-index: 10000;
+}
+
+.modal__header {
+  height: 3rem;
+  border-bottom: 1px solid black;
+}

@@ -25,7 +25,7 @@ const forSale = [
     surfaceArea: "4.38 X 10^8 km²",
     temperature: 68,
     orbitTime: 5.8,
-    resourcesAvailable: "Ocean of liquid hydrocarbons",
+    resourcesAvailable: "Ocean of liquid hydrocarbons and other minerals",
     price: 307000000000,
   },
   {
@@ -37,7 +37,7 @@ const forSale = [
     temperature: 94,
     orbitTime: 5,
     resourcesAvailable:
-      "Deposits of heavy and rare metals and sulfur with calcium deposits",
+      "Deposits of heavy and rare metals and other minerals such as sulfur with calcium deposits",
     price: 946000000000,
   },
   {
@@ -57,7 +57,7 @@ const forSale = [
     title: "Vemal",
     image: "https://i.postimg.cc/K46SR8sD/Vemal.jpg",
     location: "Hades Gamma Cluster, Antaeus System",
-    surfaceArea: "1.34 X 10^9",
+    surfaceArea: "1.34 X 10^9 km²",
     temperature: -61,
     orbitTime: 37.5,
     resourcesAvailable: "Deposits of calcium, iron, and rare elements",
@@ -72,7 +72,7 @@ const forSale = [
     temperature: 46,
     orbitTime: 60.5,
     resourcesAvailable:
-      "Deposits of light metals and rare elements, however, beware that geth activity has been spotted in the area",
+      "Deposits of light metals and rare elements, HOWEVER, BEWARE that geth activity has been spotted in the area",
     price: 998000000000,
   },
   {
@@ -83,7 +83,8 @@ const forSale = [
     surfaceArea: "2.66 x 10^9 km²",
     temperature: "Gas giant, therefore, no measurable temperature",
     orbitTime: 470.2,
-    resourcesAvailable: "Helium-3 refining and deuterium mining",
+    resourcesAvailable:
+      "Helium-3 refining and0 deuterium and other mineral mining",
     price: 721000000000,
   },
   {
@@ -106,7 +107,7 @@ const forSale = [
     temperature: -174,
     orbitTime: 297.4,
     resourcesAvailable:
-      "Deposits of light metal and extensive deposits of uranium and occasional lodes of plutonium",
+      "Deposits of light metal and extensive deposits of rare elements such as uranium and occasional lodes of plutonium",
     price: 769000000000,
   },
   {
@@ -141,14 +142,15 @@ const forSale = [
     surfaceArea: "2.09 X 10^8 km²",
     temperature: 33,
     orbitTime: 207.3,
-    resourcesAvailable: "Deposits of argon and is a terraforming prospect",
+    resourcesAvailable:
+      "Deposits of argon and is a another terraforming prospect",
     price: 448000000000,
   },
 ];
 
 const forSaleContainer = document.getElementById("cards");
 
-function showForSale() {
+function showForSale(forSale) {
   forSaleContainer.innerHTML = "";
   forSale.forEach((planet) => {
     forSaleContainer.innerHTML += `
@@ -201,9 +203,10 @@ showForSale(forSale);
 
 const filterLocation = (e) => {
   const location = e.target.value;
-  const filteredLocation = forSale.filter((planet) =>
-    planet.location.toLowerCase().includes(location.toLowerCase())
-  );
+
+  const filteredLocation = forSale.filter((planet) => {
+    return planet.location.toLowerCase().includes(location.toLowerCase());
+  });
 
   return showForSale(filteredLocation);
 };
@@ -214,6 +217,10 @@ const filterSurfaceArea = (e) => {
     planet.surfaceArea.toLowerCase().includes(surfaceArea.toLowerCase())
   );
 
+  if (surfaceArea === "all") {
+    const originalSort = forSale.sort((a, b) => a.id - b.id);
+    return showForSale(originalSort);
+  }
   return showForSale(filteredSurfaceArea);
 };
 
@@ -256,7 +263,10 @@ const filterResourcesAvailable = (e) => {
       .toLowerCase()
       .includes(resourcesAvailable.toLowerCase())
   );
-
+  if (resourcesAvailable === "all") {
+    const originalSort = forSale.sort((a, b) => a.id - b.id);
+    return showForSale(originalSort);
+  }
   return showForSale(filteredResourcesAvailable);
 };
 
