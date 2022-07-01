@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Orbitron", sans-serif;
 }
 
 nav {
@@ -63,13 +64,17 @@ a:hover {
 #landingContainer {
   color: #fafcfa;
   height: 70vh;
-  font-family: "Orbitron", sans-serif;
   background-image: url(https://i.postimg.cc/hjpkVr5j/Landing-Background.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #companyName {
   text-shadow: 3px 2px 4px rgba(227, 186, 159, 0.8);
+}
+
+section {
+  background-color: rgb(59, 63, 67);
 }
 
 /* Admin styles */

@@ -18,22 +18,6 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- NavBar -->
-    <!-- <nav>
-      <div class="toggle">
-        <i class="fas fa-bars menu" onclick="collapse() " id="bars"></i>
-      </div>
-      <ul id="list">
-        <li class="Links"><a href="#Landing" class="link">Landing</a></li>
-        <li class="Links"><a href="#About" class="link">About</a></li>
-        <li class="Links"><a href="#Projects" class="link">Projects</a></li>
-        <li class="Links">
-          <a href="#Testimonials" class="link">Testimonials</a>
-        </li>
-        <li class="Links"><a href="#Contact" class="link">Contact</a></li>
-      </ul>
-    </nav> -->
-
     <section
       id="landingContainer"
       class="d-flex justify-content-center align-items-center"
@@ -47,13 +31,16 @@
         </h1>
       </div>
     </section>
-    <section id="filter" class="my-4 border py-4">
+
+    <section id="filter" class="py-5">
       <div id="filterBy" class="d-flex justify-content-center">
-        <h3>You can filter how you see the planets</h3>
+        <h3 class="text-white-50">You can filter how you see the planets</h3>
       </div>
       <div id="filter-container" class="m-2 d-flex justify-content-center row">
         <!--Surface Area -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Filter by Surface Area</p>
           <select
             name="surfaceArea"
@@ -68,7 +55,9 @@
           </select>
         </div>
         <!-- Temperatue -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Filter by Temperatue</p>
           <select
             name="temperatue"
@@ -84,7 +73,9 @@
           </select>
         </div>
         <!-- Orbit Time -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Filter by Orbit Time</p>
           <select
             name="orbitTime"
@@ -98,7 +89,9 @@
           </select>
         </div>
         <!-- Resources Available -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Filter by Resources Available</p>
           <select
             name="resourcesAvailable"
@@ -115,7 +108,9 @@
           </select>
         </div>
         <!-- Price -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Filter by Price</p>
           <select
             name="price"
@@ -129,7 +124,9 @@
           </select>
         </div>
         <!-- Location -->
-        <div class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm">
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
           <p>Search by Location</p>
           <input
             type="text"
@@ -140,7 +137,18 @@
         </div>
       </div>
     </section>
+
     <section id="cards" class="row d-flex justify-content-around"></section>
+
+    <footer class="d-flex justify-content-around py-5 bg-dark text-light">
+      <div>ⓒ Wandering star requisitions-All rights reserved</div>
+      <div></div>
+      <div>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
 
     <!-- font awesome -->
     <script

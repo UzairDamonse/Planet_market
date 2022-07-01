@@ -50,7 +50,7 @@
         >
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header bg-dark text-light">
                 <h5 class="modal-title" id="staticBackdropLabel">
                   Add details for planet
                 </h5>
@@ -61,7 +61,7 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body bg-secondary">
                 <div>
                   <p class="my-1">Input a title</p>
                   <input
@@ -135,12 +135,12 @@
                   />
                 </div>
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer bg-dark text-light">
                 <button
                   id="submit"
                   type="submit"
                   onclick="addNewPlanetForSale(event)"
-                  class="btn"
+                  class="btn text-light"
                 >
                   Add new
                 </button>
@@ -151,10 +151,117 @@
       </div>
     </section>
 
+    <!-- Filters -->
+    <section id="filter" class="py-5">
+      <div id="filterBy" class="d-flex justify-content-center">
+        <h3 class="text-white-50">You can filter how you see the planets</h3>
+      </div>
+      <div id="filter-container" class="m-2 d-flex justify-content-center row">
+        <!--Surface Area -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Filter by Surface Area</p>
+          <select
+            name="surfaceArea"
+            id="surfaceArea"
+            style="width: 80%"
+            onchange="filterSurfaceArea(event)"
+          >
+            <option value="all">All</option>
+            <option value="10^8">10^8 km²</option>
+            <option value="10^9">10^9 km²</option>
+            <option value="10^10">10^10 km²</option>
+          </select>
+        </div>
+        <!-- Temperatue -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Filter by Temperatue</p>
+          <select
+            name="temperatue"
+            id="temperatue"
+            style="width: 80%"
+            onchange="filterTemperature(event)"
+          >
+            <option value="all">All</option>
+            <option value="temperatureAcsending">Temperatue Ascending</option>
+            <option value="temperatureDescsending">
+              Temperatue Descending
+            </option>
+          </select>
+        </div>
+        <!-- Orbit Time -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Filter by Orbit Time</p>
+          <select
+            name="orbitTime"
+            id="orbitTime"
+            style="width: 81%"
+            onchange="filterOrbitTime(event)"
+          >
+            <option value="all">All</option>
+            <option value="orbitTimeAscending">Orbit Time Ascending</option>
+            <option value="orbitTimeDescending">Orbit Time Descending</option>
+          </select>
+        </div>
+        <!-- Resources Available -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Filter by Resources Available</p>
+          <select
+            name="resourcesAvailable"
+            id="resourcesAvailable"
+            style="width: 80%"
+            onchange="filterResourcesAvailable(event)"
+          >
+            <option value="all">All</option>
+            <option value="rare">Rare elements</option>
+            <option value="light">Light metals</option>
+            <option value="heavy">Heavy metals</option>
+            <option value="water">Water</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <!-- Price -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Filter by Price</p>
+          <select
+            name="price"
+            id="price"
+            onchange="filterPrice(event)"
+            style="width: 80%"
+          >
+            <option value="all">All</option>
+            <option value="priceAcsending">Price Ascending</option>
+            <option value="priceDescsending">Price Descending</option>
+          </select>
+        </div>
+        <!-- Location -->
+        <div
+          class="m-2 pb-3 pt-2 col-md-3 col-sm-4 col-xs-3 border shadow-sm rounded bg-dark text-light"
+        >
+          <p>Search by Location</p>
+          <input
+            type="text"
+            oninput="filterLocation(event)"
+            placeholder="eg. Voyager"
+            style="width: 81%"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Table -->
     <section>
       <div class="table-responsive h-100">
-        <table class="table table-dark table-striped align-middle">
+        <table class="table table-secondary table-striped align-middle">
           <thead class="align-middle">
             <tr>
               <th scope="col-md-1">ID</th>
@@ -173,10 +280,6 @@
         </table>
       </div>
     </section>
-
-    <button onclick="deletePlanet(${tableValue.id})">
-      <i class="fa-solid fa-trash-can m-1 fs-5" id="delete"></i>
-    </button>
 
     <!-- font awesome -->
     <script

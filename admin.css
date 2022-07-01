@@ -1,26 +1,23 @@
-#close {
-  top: 20px;
-  left: 100px;
-}
-#Modal {
-  position: fixed;
-  height: 100vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  display: none;
-  z-index: -11;
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", sans-serif;
 }
 
-#Modal.active {
-  height: 35%;
-  width: 40%;
-  display: block;
-  z-index: 10000;
+.functionality:hover {
+  cursor: pointer;
 }
 
-.modal__header {
-  height: 3rem;
-  border-bottom: 1px solid black;
+#edit:hover {
+  color: rgba(29, 54, 197, 0.663);
+}
+
+#save:hover {
+  color: rgba(26, 190, 26, 0.904);
+}
+
+#delete:hover {
+  color: rgba(230, 43, 43, 0.889);
 }
